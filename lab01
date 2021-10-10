@@ -1,0 +1,13 @@
+Lista komend potrzebnych do zainicjowania repozytorium:
+git init
+git remote add origin https://github.com/NikolaKozakiewicz/PWSZ-legnica.git
+git pull origin master
+git status
+
+Lista komend potrzebnych do pobrania i wgrania zmian:
+git config user.name = "NikolaKozakiewicz"
+git config user.email = "nikola.kozakiewicz@stud.pwsz.legnica.edu.pl"
+git add .
+git status
+git commit -am "zmiany"
+git push origin master
