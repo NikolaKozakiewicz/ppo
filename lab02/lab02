@@ -1,0 +1,103 @@
+#include <iostream>
+#include <cstdlib>
+#include <string>
+#include <sstream>
+#include <vector>
+
+using namespace std;
+
+#define STUDENTS_COUNT 10
+
+class Student {
+	public:
+		string studentImie;
+		string studentNaz;
+		string studentNr;
+		int studentAkt;
+		
+		void setStudentImie(string studentImie) {
+			this->studentImie = studentImie;
+		}
+		void setStudentNaz(string studentNaz) {
+			this->studentNaz = studentNaz;
+		}
+		void setStudentNr(string studentNr) {
+			this->studentNr = studentNr;
+		}
+		void setStudentAktive(int studentAkt) {
+			this->studentAkt = studentAkt;
+		}
+		
+		string getStudentImie() {
+			return this->studentImie;
+		}
+		string getStudentNaz() {
+			return this->studentNaz;
+		}
+		string getStudentNr() {
+			return this->studentNr;
+		}
+};
+
+string getRandomStudentNr() {
+	ostringstream ss;
+	int losowyNr = rand() % 2000 + 37000;
+	
+	ss << losowyNr;
+	
+	return ss.str();
+}
+
+string getRandomStudentImie() {
+	ostringstream si;
+	char tab[6][10] = {{"Maja"},{"Laura"},{"Olga"},{"Eryk"},{"Piotr"},{"Marcel"}};
+	int losoweImie = rand() % 6 + 1;
+	
+	si << tab[losoweImie];
+	
+	return si.str();
+}
+
+string getRandomStudentNaz() {
+	ostringstream sn;
+	char tab[5][20] = {{"Markowiak"},{"Lis"},{"Nowak"},{"Stankiewicz"},{"Pietrzak"}};
+	int losoweNaz = rand() % 6 + 1;
+	
+	sn << tab[losoweNaz];
+	
+	return sn.str();
+}
+
+int getRandomStudentAkt() {
+	int aktyw = rand() % 2;
+	
+	return aktyw;
+}
+
+int main() {
+	vector<Student> students;
+	
+	for(int i = 0; i < STUDENTS_COUNT; i++) {
+		Student student;
+		student.setStudentImie(getRandomStudentImie());
+		student.setStudentNaz(getRandomStudentNaz());
+		student.setStudentNr(getRandomStudentNr());
+		student.setStudentAktive(getRandomStudentAkt());
+		students.push_back(student);
+	}
+	
+	cout  << "Utworzono grupe studentow aktywnych." << endl << endl;
+	
+	for(int i = 0; i < students.size(); i++) {
+		Student student = students.at(i);
+		if (student.studentAkt == 1)
+		{
+			cout << student.getStudentImie() << " " << student.getStudentNaz() << ", " << student.getStudentNr() << endl;
+		}
+	}
+	
+	return 0;
+}
+
+Uwagi:
+Wciąż nie jestem pewna czy proces losowa imion i nazwisk jest prawidłowy, gdyż gdy usunąć zmienną odpowiadającą za aktywność, wówczas widać pewne niechciane ikony i ucięte fragmenty innych kodów. Chciałabym wiedzieć dlaczego tak się dzieje i jak to naprawić.
