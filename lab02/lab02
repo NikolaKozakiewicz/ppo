@@ -51,7 +51,7 @@ string getRandomStudentNr() {
 string getRandomStudentImie() {
 	ostringstream si;
 	char tab[6][10] = {{"Maja"},{"Laura"},{"Olga"},{"Eryk"},{"Piotr"},{"Marcel"}};
-	int losoweImie = rand() % 6 + 1;
+	int losoweImie = rand() % 6;
 	
 	si << tab[losoweImie];
 	
@@ -61,7 +61,7 @@ string getRandomStudentImie() {
 string getRandomStudentNaz() {
 	ostringstream sn;
 	char tab[5][20] = {{"Markowiak"},{"Lis"},{"Nowak"},{"Stankiewicz"},{"Pietrzak"}};
-	int losoweNaz = rand() % 6 + 1;
+	int losoweNaz = rand() % 6;
 	
 	sn << tab[losoweNaz];
 	
@@ -86,7 +86,7 @@ int main() {
 		students.push_back(student);
 	}
 	
-	cout  << "Utworzono grupe studentow aktywnych." << endl << endl;
+	cout  << "Utworzono grupe studentow aktywnych.\n" << endl;
 	
 	for(int i = 0; i < students.size(); i++) {
 		Student student = students.at(i);
@@ -99,5 +99,4 @@ int main() {
 	return 0;
 }
 
-Uwagi:
-Wciąż nie jestem pewna czy proces losowa imion i nazwisk jest prawidłowy, gdyż gdy usunąć zmienną odpowiadającą za aktywność, wówczas widać pewne niechciane ikony i ucięte fragmenty innych kodów. Chciałabym wiedzieć dlaczego tak się dzieje i jak to naprawić.
+
