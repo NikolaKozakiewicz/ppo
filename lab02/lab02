@@ -3,6 +3,7 @@
 #include <string>
 #include <sstream>
 #include <vector>
+#include <time.h>
 
 using namespace std;
 
@@ -51,7 +52,7 @@ string getRandomStudentNr() {
 string getRandomStudentImie() {
 	ostringstream si;
 	char tab[6][10] = {{"Maja"},{"Laura"},{"Olga"},{"Eryk"},{"Piotr"},{"Marcel"}};
-	int losoweImie = rand() % 6;
+	int losoweImie = rand() % 5;
 	
 	si << tab[losoweImie];
 	
@@ -60,8 +61,8 @@ string getRandomStudentImie() {
 
 string getRandomStudentNaz() {
 	ostringstream sn;
-	char tab[5][20] = {{"Markowiak"},{"Lis"},{"Nowak"},{"Stankiewicz"},{"Pietrzak"}};
-	int losoweNaz = rand() % 6;
+	char tab[5][20] = {{"Markowiak"},{"Lis"},{"Nowak"},{"Sobczak"},{"Pietrzak"}};
+	int losoweNaz = rand() % 5;
 	
 	sn << tab[losoweNaz];
 	
@@ -75,6 +76,7 @@ int getRandomStudentAkt() {
 }
 
 int main() {
+	srand(time(NULL));
 	vector<Student> students;
 	
 	for(int i = 0; i < STUDENTS_COUNT; i++) {
