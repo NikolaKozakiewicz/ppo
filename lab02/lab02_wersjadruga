@@ -3,12 +3,14 @@
 #include <string>
 #include <sstream>
 #include <vector>
+#include <time.h>
 
 using namespace std;
 
 #define STUDENTS_COUNT 10
 
 int main() {
+	srand(time(NULL));
 	char imie[6][10] = {{"Maja"},{"Laura"},{"Olga"},{"Eryk"},{"Piotr"},{"Marcel"}};
 	char naz[5][20] = {{"Markowiak"},{"Lis"},{"Nowak"},{"Stankiewicz"},{"Pietrzak"}};
 	int numer;
