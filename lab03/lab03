@@ -1,0 +1,68 @@
+#include <iostream>
+#include <stdlib.h>
+#include <time.h>
+
+using namespace std;
+
+class Point {
+	public:
+		float x;
+		float y;
+		
+		Point(float x, float y) {
+			this->x = x;
+			this->y = y;
+			cout << "Wierzcholek 1 znajduje sie w punkcie [" << this->x << ", " << this->y << "]." << endl;
+		}
+		
+		void movePoint(float xAxisShift, float yAxisShift) {
+			this->x += xAxisShift;
+			this->y += yAxisShift;
+		}
+};
+
+class Square {
+	public:
+		Point A1B1;
+		float bok;
+		
+		Square(Point A1B1, float bok): A1B1(A1B1) {
+			this->A1B1 = A1B1;
+			this->bok = bok;
+		}
+		
+		void printCoordinates() {
+			cout << "x: " << this->A1B1.x << " y: " << this->A1B1.y << endl;
+		}
+};
+
+int main() {
+	srand(time(NULL));
+	
+	float inputX, inputY;
+	float inputBok;
+	int liczba;
+	
+	cout << "Ile chcesz kwadratow?" << endl;
+	cin >> liczba;
+	
+	for(int i=0; i<liczba; i++)
+	{
+		inputX = (rand() % 30) - 15;
+		inputY = (rand() % 30) - 15;
+		inputBok = (rand() % 10) + 2;
+		Point wierzcholek = Point(inputX, inputY);
+		Square square = Square(wierzcholek, inputBok);
+		cout << "Dlugosc boku: " << inputBok << endl;
+		square.printCoordinates();
+		square.A1B1.movePoint(0, inputBok);
+		square.printCoordinates();
+		square.A1B1.movePoint(inputBok, 0);
+		square.printCoordinates();
+		square.A1B1.movePoint(inputBok, inputBok);
+		square.printCoordinates();
+		cout << "\n" << endl;
+	}
+	
+	return 0;
+}
