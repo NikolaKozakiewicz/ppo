@@ -1,0 +1,201 @@
+#include <iostream>
+#include <stdlib.h>
+#include <time.h>
+#include <vector>
+#include <math.h>
+#include <string>
+#include <sstream>
+
+using namespace std;
+
+class Log {
+	public:
+		static void info(string message = "") {
+			cout << message << endl;
+		}
+};
+
+class Dice {
+	public:
+		int sides;
+		
+		Dice() {}
+		
+		Dice(int sides) {
+			this->sides = sides;
+		}
+		
+		int roll() {
+			int result = (rand() % sides) + 1;
+			
+			ostringstream ss;
+			ss << "Rzut kostka: " << result;
+			Log::info(ss.str());
+			
+			return result;
+		}
+};
+
+class Pawn {
+	public:
+		int position;
+		string name;
+		
+		Pawn() {}
+		
+		Pawn(string name) {
+			this->name = name;
+			this->position = 0;
+			
+			Log::info(name + " dolaczyl do gry.");
+		}
+};
+
+string getPawnName(int numer) {
+	ostringstream sn;
+	char tab[10][10] = {{"Gracz 1"},{"Gracz 2"},{"Gracz 3"},{"Gracz 4"},
+	{"Gracz 5"},{"Gracz 6"},{"Gracz 7"},{"Gracz 8"},{"Gracz 9"},{"Gracz 10"},};
+	
+	sn << tab[numer];
+	
+	return sn.str();
+}
+
+class Board {
+	public:
+		int maxPosition = 100;
+		int maxTurns = 100;
+		int winPosition = 0;
+		
+		vector<Pawn> pawns;
+		Dice dice;
+		Pawn winner;
+		int turnsCounter;
+		
+		Board() {
+			this->turnsCounter = 0;
+		}
+		
+		void setPola(int pola) {
+			this->maxPosition = pola;
+		}
+		
+		void setRundy(int rundy) {
+			this->maxTurns = rundy;
+		}
+		
+		void performTurn() {
+			this->turnsCounter++;
+			
+			ostringstream ss;
+			ss << "Runda " << this->turnsCounter;
+			Log::info();
+			Log::info(ss.str());
+			
+			for(int i = 0; i < this->pawns.size(); i++) {
+				int rollResult = this->dice.roll();
+				Pawn &pawn = this->pawns.at(i);
+				pawn.position = pawn.position + rollResult;
+				
+				if (pawn.position>=winPosition)
+				{
+					winPosition = pawn.position;
+				}
+				
+				ostringstream ss;
+				ss << pawn.name << " na nowej pozycji: " << pawn.position;
+				Log::info(ss.str());
+								
+				if(pawn.position >= this->maxPosition) {
+					this->winner = pawn;
+					throw "Mamy zwyciezce!";
+				}
+				if(turnsCounter >= this->maxTurns) {
+					cout << "Koniec rund. Wygrywa gracz najdalej od startu." << endl;
+					for(int i = 0; i < this->pawns.size(); i++) {
+						if (pawn.position >= winPosition)
+						{
+							this->winner = pawn;
+						}
+					}
+					throw "Mamy zwieciezce!";
+					// Jak zrobi� wyb�r zwyci�zcy na podstawie liczby p�l????
+				}
+			}
+		}
+};
+
+//Dice (int sides);
+//Pawn (string name) {
+//	this.name = name;
+//	this.position = 0;
+//}
+//Board (pawn, dice, max, limit);
+
+int main() {
+	srand(time(NULL));
+	
+	int sciany, gracze, pola, rundy;
+	
+	Board board = Board();
+	
+	repeat: cout << "Ile scian ma miec kostka? [4...20]" << endl;
+	cin >> sciany;
+	if ((sciany<4)||(sciany>20))
+	{
+		cout << "Dane nieprawidlowe. Podaj liczbe jeszcze raz." << endl;
+		goto repeat;
+	}
+	else
+	{
+		board.dice = Dice(sciany);
+	}
+	
+	repeat2: cout << "Wybierz liczbe graczy. [3...10]" << endl;
+	cin >> gracze;
+	if ((gracze<3)||(gracze>10))
+	{
+		cout << "Dane nieprawidlowe. Podaj liczbe jeszcze raz." << endl;
+		goto repeat2;
+	}
+	else {
+		for (int i=0; i<gracze; i++)
+		{			
+			board.pawns.push_back(Pawn(getPawnName(i)));
+		}
+	}
+	
+	repeat3: cout << "\nIle pol ma miec plansza? [min 20]" << endl;
+	cin >> pola;
+	if (pola<20)
+	{
+		cout << "Dane nieprawidlowe. Podaj liczbe jeszcze raz." << endl;
+		goto repeat3;
+	}
+	else board.setPola(pola);
+	
+	if (pola>100)
+	{
+		repeat4: cout << "Liczba pol maksymalnych przekroczona. Wprowadz limit rund [max 20]" << endl;
+		cin >> rundy;
+		if (rundy>20)
+		{
+			cout << "Dane nieprawidlowe. Podaj liczbe jeszcze raz." << endl;
+		goto repeat4;
+		}
+		else board.setRundy(rundy);
+	}
+	cout << "\nRozpoczynamy gre!\n" << endl;
+	system("pause");
+	
+	try {
+		while(true) {
+			board.performTurn();
+		}
+	} catch(const char* exception) {
+		Log::info();
+		Log::info(board.winner.name + " wygrywa");
+	}
+	
+	return 0;
+}
