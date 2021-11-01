@@ -111,14 +111,16 @@ class Board {
 				if ((pawn.position%2!=0)&&rollResult==1)
 				{
 					cout << "Stanales na zlej pozycji. Musisz sie cofnac" << endl;
-					dice.roll();
-					pawn.position = pawn.position - rollResult;
+					int rollResult2 = this->dice.roll();
+					pawn.position = pawn.position - rollResult2;
+					cout << pawn.name << " na nowej pozycji: " << pawn.position << endl;
 				}
 				//2.2. kmax
 				if ((pawn.position%7==0)&&(rollResult==dice.sides)) {
 					cout << "Dodatkowy rzut!" << endl;
-					dice.roll();
-					pawn.position = pawn.position + rollResult;
+					int rollResult3 = this->dice.roll();
+					pawn.position = pawn.position + rollResult3;
+					cout << pawn.name << " na nowej pozycji: " << pawn.position << endl;
 				}
 				//wygrana zwykla
 				if(pawn.position >= this->maxPosition) {
