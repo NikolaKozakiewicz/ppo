@@ -97,6 +97,7 @@ class Board {
 				Pawn &pawn = this->pawns.at(i);
 				pawn.position = pawn.position + rollResult;
 				
+				//potrzebne tylko w przypadku limitu rund
 				if (pawn.position>=winPosition)
 				{
 					winPosition = pawn.position;
@@ -105,11 +106,26 @@ class Board {
 				ostringstream ss;
 				ss << pawn.name << " na nowej pozycji: " << pawn.position;
 				Log::info(ss.str());
-								
+				
+				//2.2. k = 1
+				if ((pawn.position%2!=0)&&rollResult==1)
+				{
+					cout << "Stanales na zlej pozycji. Musisz sie cofnac" << endl;
+					dice.roll();
+					pawn.position = pawn.position - rollResult;
+				}
+				//2.2. kmax
+				if ((pawn.position%7==0)&&(rollResult==dice.sides)) {
+					cout << "Dodatkowy rzut!" << endl;
+					dice.roll();
+					pawn.position = pawn.position + rollResult;
+				}
+				//wygrana zwykla
 				if(pawn.position >= this->maxPosition) {
 					this->winner = pawn;
 					throw "Mamy zwyciezce!";
 				}
+				//wygrana w limicie rund
 				if(turnsCounter >= this->maxTurns) {
 					cout << "Koniec rund. Wygrywa gracz najdalej od startu." << endl;
 					for(int i = 0; i < this->pawns.size(); i++) {
@@ -119,7 +135,7 @@ class Board {
 						}
 					}
 					throw "Mamy zwieciezce!";
-					// Jak zrobi� wyb�r zwyci�zcy na podstawie liczby p�l????
+					// Jak zrobic wybor zwyciezcy na podstawie liczby pol????
 				}
 			}
 		}
@@ -130,7 +146,6 @@ class Board {
 //	this.name = name;
 //	this.position = 0;
 //}
-//Board (pawn, dice, max, limit);
 
 int main() {
 	srand(time(NULL));
