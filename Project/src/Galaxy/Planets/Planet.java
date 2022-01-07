@@ -2,19 +2,23 @@ package Galaxy.Planets;
 
 import Galaxy.Log;
 
-abstract public class Planet {
+import java.util.ArrayList;
 
-    private String name;
-    private int x;
-    private int y;
+public abstract class Planet {
 
-    Planet(String name, int x, int y) {
-        this.name = name;
-        this.x = x;
-        this.y = y;
-    }
+    public abstract String name();
 
-    public String getName() {
-        return getClass().getSimpleName();
+    public static ArrayList<Planet> giveList() {
+        ArrayList<Planet> planets = new ArrayList<>();
+        planets.add(new Ashyn());
+        planets.add(new Braize());
+        planets.add(new FirstoftheSun());
+        planets.add(new Nalthis());
+        planets.add(new Roshar());
+        planets.add(new Scadrial());
+        planets.add(new Sel());
+        planets.add(new Taldain());
+        planets.add(new Threnody());
+        return planets;
     }
 }
