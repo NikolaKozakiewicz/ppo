@@ -8,6 +8,14 @@ public abstract class Planet {
 
     public abstract String name();
 
+    abstract String getShard();
+
+    abstract ArrayList<String> magicSystems();
+
+    public String shard() {return getShard(); };
+
+    public ArrayList magic() {return magicSystems();}
+
     public static ArrayList<Planet> giveList() {
         ArrayList<Planet> planets = new ArrayList<>();
         planets.add(new Ashyn());
