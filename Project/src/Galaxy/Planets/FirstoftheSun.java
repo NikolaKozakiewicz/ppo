@@ -13,6 +13,8 @@ public class FirstoftheSun extends Planet implements PlanetInterface {
     public String getShard() {
         return "Niezależność (awatar Patji)";}
 
+    public String bookTitle() {return "'Szósty ze Zmierzchu'";}
+
     @Override
     public ArrayList<Investiture> magicSystems() {
         ArrayList<Investiture> magic = new ArrayList<>();

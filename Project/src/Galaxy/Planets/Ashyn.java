@@ -13,6 +13,8 @@ public class Ashyn extends Planet implements PlanetInterface {
     public String getShard() {
         return "brak";}
 
+    public String bookTitle() {return "'Boska Cisza'";}
+
     @Override
     public ArrayList<Investiture> magicSystems() {
         ArrayList<Investiture> magic = new ArrayList<>();

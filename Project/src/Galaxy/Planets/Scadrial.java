@@ -15,6 +15,8 @@ public class Scadrial extends Planet implements PlanetInterface {
     public String getShard() {
         return "Harmonia (dawniej Zachowanie i Zniszczenie)";}
 
+    public String bookTitle() {return "'Z mgły zrodzony'";}
+
     public ArrayList<Investiture> magicSystems() {
         ArrayList<Investiture> magic = new ArrayList<>();
 

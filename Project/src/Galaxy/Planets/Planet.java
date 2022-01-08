@@ -2,21 +2,22 @@ package Galaxy.Planets;
 
 import Galaxy.Interfaces.PlanetInterface;
 import Galaxy.Investiture.Investiture;
-import Galaxy.Log;
 
 import java.util.ArrayList;
 
 public abstract class Planet implements PlanetInterface {
 
     public abstract String name();
-
     abstract String getShard();
+    abstract String bookTitle();
 
     abstract ArrayList<Investiture> magicSystems();
 
     public String shard() {return getShard(); };
 
     public ArrayList magic() {return magicSystems();}
+
+    public String book() {return bookTitle();}
 
     public static ArrayList<Planet> giveList() {
         ArrayList<Planet> planets = new ArrayList<>();

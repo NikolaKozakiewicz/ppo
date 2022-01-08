@@ -13,6 +13,8 @@ public class Taldain extends Planet implements PlanetInterface {
     public String getShard() {
         return "Niezależność";}
 
+    public String bookTitle() {return "'Biały piasek'";}
+
     public ArrayList<Investiture> magicSystems() {
         ArrayList<Investiture> magic = new ArrayList<>();
 

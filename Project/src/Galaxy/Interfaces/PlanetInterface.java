@@ -6,4 +6,5 @@ public interface PlanetInterface {
 
     String name();
     String shard();
+    String book();
 }

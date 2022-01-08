@@ -8,6 +8,8 @@ public abstract class Investiture implements MagicInterface {
 
     public abstract String name();
 
+    /*public abstract void info();*/
+
     public static ArrayList<Investiture> makeMagic() {
         ArrayList<Investiture> magic = new ArrayList<>();
 

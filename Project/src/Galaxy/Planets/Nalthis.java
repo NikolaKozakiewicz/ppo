@@ -13,6 +13,8 @@ public class Nalthis extends Planet implements PlanetInterface {
     public String getShard() {
         return "Obdarowanie";}
 
+    public String bookTitle() {return "'Rozjemca'";}
+
     @Override
     public ArrayList<Investiture> magicSystems() {
         ArrayList<Investiture> magic = new ArrayList<>();

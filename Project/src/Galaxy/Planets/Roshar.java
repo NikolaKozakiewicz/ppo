@@ -7,6 +7,7 @@ import Galaxy.Investiture.Surgebinding;
 import Galaxy.Investiture.Voidbinding;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Roshar extends Planet implements PlanetInterface {
 
@@ -14,6 +15,8 @@ public class Roshar extends Planet implements PlanetInterface {
 
     public String getShard() {
         return "Honor, Pielęgnacja";}
+
+    public String bookTitle() {return "'Archiwum Burzowego Światła'";}
 
     public ArrayList<Investiture> magicSystems() {
         ArrayList<Investiture> magic = new ArrayList<>();
@@ -24,4 +27,5 @@ public class Roshar extends Planet implements PlanetInterface {
 
         return magic;
     }
+
 }

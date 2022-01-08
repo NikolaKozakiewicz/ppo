@@ -13,6 +13,8 @@ public class Threnody extends Planet implements PlanetInterface {
     String getShard() {
         return "Ambicja";}
 
+    public String bookTitle() {return "'Cienie dla Ciszy w Lasach Piekła'";}
+
     public ArrayList<Investiture> magicSystems() {
         ArrayList<Investiture> magic = new ArrayList<>();
 

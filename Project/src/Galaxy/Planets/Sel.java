@@ -12,6 +12,8 @@ public class Sel extends Planet implements PlanetInterface {
     public String getShard() {
         return "Dominacja, Oddanie";}
 
+    public String bookTitle() {return "'Elantris'; 'Dusza Cesarza'";}
+
     public ArrayList<Investiture> magicSystems() {
         ArrayList<Investiture> magic = new ArrayList<>();
 
