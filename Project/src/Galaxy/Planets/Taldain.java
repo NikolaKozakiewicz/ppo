@@ -1,6 +1,8 @@
 package Galaxy.Planets;
 
 import Galaxy.Interfaces.PlanetInterface;
+import Galaxy.Investiture.Investiture;
+import Galaxy.Investiture.SandMastery;
 
 import java.util.ArrayList;
 
@@ -11,9 +13,11 @@ public class Taldain extends Planet implements PlanetInterface {
     public String getShard() {
         return "Niezależność";}
 
-    public ArrayList<String> magicSystems() {
-        ArrayList<String> magic = new ArrayList<>();
-        magic.add("Mistrzostwo piasku");
+    public ArrayList<Investiture> magicSystems() {
+        ArrayList<Investiture> magic = new ArrayList<>();
+
+        magic.add(new SandMastery());
+
         return magic;
     }
 }

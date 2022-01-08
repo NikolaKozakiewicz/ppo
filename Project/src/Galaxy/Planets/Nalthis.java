@@ -1,6 +1,8 @@
 package Galaxy.Planets;
 
 import Galaxy.Interfaces.PlanetInterface;
+import Galaxy.Investiture.Awakening;
+import Galaxy.Investiture.Investiture;
 
 import java.util.ArrayList;
 
@@ -11,9 +13,12 @@ public class Nalthis extends Planet implements PlanetInterface {
     public String getShard() {
         return "Obdarowanie";}
 
-    public ArrayList<String> magicSystems() {
-        ArrayList<String> magic = new ArrayList<>();
-        magic.add("Rozbudzanie");
+    @Override
+    public ArrayList<Investiture> magicSystems() {
+        ArrayList<Investiture> magic = new ArrayList<>();
+
+        magic.add(new Awakening());
+
         return magic;
     }
 }

@@ -1,6 +1,8 @@
 package Galaxy.Planets;
 
 import Galaxy.Interfaces.PlanetInterface;
+import Galaxy.Investiture.Aviar;
+import Galaxy.Investiture.Investiture;
 
 import java.util.ArrayList;
 
@@ -11,9 +13,12 @@ public class FirstoftheSun extends Planet implements PlanetInterface {
     public String getShard() {
         return "Niezależność (awatar Patji)";}
 
-    public ArrayList<String> magicSystems() {
-        ArrayList<String> magic = new ArrayList<>();
-        magic.add("Aviary");
+    @Override
+    public ArrayList<Investiture> magicSystems() {
+        ArrayList<Investiture> magic = new ArrayList<>();
+
+        magic.add(new Aviar());
+
         return magic;
     }
 }

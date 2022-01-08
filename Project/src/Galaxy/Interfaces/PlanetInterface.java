@@ -6,5 +6,4 @@ public interface PlanetInterface {
 
     String name();
     String shard();
-    ArrayList<String> magicSystems();
 }

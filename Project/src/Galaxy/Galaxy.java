@@ -1,10 +1,13 @@
 package Galaxy;
 
+import Galaxy.Interfaces.MagicInterface;
+import Galaxy.Investiture.Investiture;
 import Galaxy.Planets.Planet;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public final class Galaxy {
@@ -26,6 +29,7 @@ public final class Galaxy {
             System.out.println(exception.getMessage());
         }
     }
+
     private void findPlanet(String planet) throws Throwable {
         try {
             Method reflectedMethod = this.getClass().getDeclaredMethod(planet);
@@ -39,6 +43,9 @@ public final class Galaxy {
     }
 
     private void Ashyn() throws Exception {
+
+        ArrayList<Investiture> investitures = Investiture.makeMagic();
+
         Log.info(showPlanets().get(0).name());
         Log.info("Odprysk: " + showPlanets().get(0).shard());
         Log.info("Systemy magiczne: " + showPlanets().get(0).magic());

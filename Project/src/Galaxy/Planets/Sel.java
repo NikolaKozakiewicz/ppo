@@ -1,6 +1,7 @@
 package Galaxy.Planets;
 
 import Galaxy.Interfaces.PlanetInterface;
+import Galaxy.Investiture.*;
 
 import java.util.ArrayList;
 
@@ -11,12 +12,14 @@ public class Sel extends Planet implements PlanetInterface {
     public String getShard() {
         return "Dominacja, Oddanie";}
 
-    public ArrayList<String> magicSystems() {
-        ArrayList<String> magic = new ArrayList<>();
-        magic.add("AonDor");
-        magic.add("ChayShan");
-        magic.add("Fałszerstwo");
-        magic.add("Pięczecie Krwi");
+    public ArrayList<Investiture> magicSystems() {
+        ArrayList<Investiture> magic = new ArrayList<>();
+
+        magic.add(new AonDor());
+        magic.add(new ChayShan());
+        magic.add(new Forgery());
+        magic.add(new Bloodsealing());
+
         return magic;
     }
 }

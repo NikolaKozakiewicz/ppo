@@ -1,6 +1,8 @@
 package Galaxy.Planets;
 
 import Galaxy.Interfaces.PlanetInterface;
+import Galaxy.Investiture.Investiture;
+import Galaxy.Investiture.Shadows;
 
 import java.util.ArrayList;
 
@@ -11,9 +13,11 @@ public class Threnody extends Planet implements PlanetInterface {
     String getShard() {
         return "Ambicja";}
 
-    public ArrayList<String> magicSystems() {
-        ArrayList<String> magic = new ArrayList<>();
-        magic.add("Cienie");
+    public ArrayList<Investiture> magicSystems() {
+        ArrayList<Investiture> magic = new ArrayList<>();
+
+        magic.add(new Shadows());
+
         return magic;
     }
 }

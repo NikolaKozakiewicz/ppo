@@ -1,6 +1,8 @@
 package Galaxy.Planets;
 
 import Galaxy.Interfaces.PlanetInterface;
+import Galaxy.Investiture.Investiture;
+import Galaxy.Investiture.Voidbinding;
 
 import java.util.ArrayList;
 
@@ -11,9 +13,12 @@ public class Braize extends Planet implements PlanetInterface {
     public String getShard() {
         return "Odium";}
 
-    public ArrayList<String> magicSystems() {
-        ArrayList<String> magic = new ArrayList<>();
-        magic.add("Wiązanie Pustki");
+    @Override
+    public ArrayList<Investiture> magicSystems() {
+        ArrayList<Investiture> magic = new ArrayList<>();
+
+        magic.add(new Voidbinding());
+
         return magic;
     }
 }

@@ -1,6 +1,8 @@
 package Galaxy.Planets;
 
 import Galaxy.Interfaces.PlanetInterface;
+import Galaxy.Investiture.DiseaseMagic;
+import Galaxy.Investiture.Investiture;
 
 import java.util.ArrayList;
 
@@ -11,9 +13,12 @@ public class Ashyn extends Planet implements PlanetInterface {
     public String getShard() {
         return "brak";}
 
-    public ArrayList<String> magicSystems() {
-        ArrayList<String> magic = new ArrayList<>();
-        magic.add("Magia chorób");
+    @Override
+    public ArrayList<Investiture> magicSystems() {
+        ArrayList<Investiture> magic = new ArrayList<>();
+
+        magic.add(new DiseaseMagic());
+
         return magic;
     }
 }

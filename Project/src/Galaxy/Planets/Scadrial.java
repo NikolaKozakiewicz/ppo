@@ -1,6 +1,10 @@
 package Galaxy.Planets;
 
 import Galaxy.Interfaces.PlanetInterface;
+import Galaxy.Investiture.Allomancy;
+import Galaxy.Investiture.Feruchemy;
+import Galaxy.Investiture.Hemalurgy;
+import Galaxy.Investiture.Investiture;
 
 import java.util.ArrayList;
 
@@ -11,11 +15,13 @@ public class Scadrial extends Planet implements PlanetInterface {
     public String getShard() {
         return "Harmonia (dawniej Zachowanie i Zniszczenie)";}
 
-    public ArrayList<String> magicSystems() {
-        ArrayList<String> magic = new ArrayList<>();
-        magic.add("Allomancja");
-        magic.add("Feruchemia");
-        magic.add("Hemalurgia");
+    public ArrayList<Investiture> magicSystems() {
+        ArrayList<Investiture> magic = new ArrayList<>();
+
+        magic.add(new Allomancy());
+        magic.add(new Feruchemy());
+        magic.add(new Hemalurgy());
+
         return magic;
     }
 }
