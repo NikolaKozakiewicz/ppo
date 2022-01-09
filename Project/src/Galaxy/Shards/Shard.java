@@ -6,6 +6,17 @@ import java.util.ArrayList;
 
 public abstract class Shard {
 
+    public abstract String name();
+    abstract String vessel();
+    abstract String info();
+    abstract boolean alive();
+
+    public String getVessel() {return vessel();}
+
+    public String getInfo() {return info();}
+
+    public boolean isAlive() {return alive();}
+
     public static ArrayList<Shard> showShards() {
         ArrayList<Shard> shards = new ArrayList<>();
 

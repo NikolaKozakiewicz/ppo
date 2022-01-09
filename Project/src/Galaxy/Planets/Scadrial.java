@@ -5,6 +5,10 @@ import Galaxy.Investiture.Allomancy;
 import Galaxy.Investiture.Feruchemy;
 import Galaxy.Investiture.Hemalurgy;
 import Galaxy.Investiture.Investiture;
+import Galaxy.Shards.Autonomy;
+import Galaxy.Shards.Preservation;
+import Galaxy.Shards.Ruin;
+import Galaxy.Shards.Shard;
 
 import java.util.ArrayList;
 
@@ -13,7 +17,13 @@ public class Scadrial extends Planet implements PlanetInterface {
     public String name() {return getClass().getSimpleName();}
 
     public String getShard() {
-        return "Harmonia (dawniej Zachowanie i Zniszczenie)";}
+        ArrayList<Shard> shards = new ArrayList<>();
+
+        shards.add(new Preservation());
+        shards.add(new Ruin());
+
+        return shards.toString();
+    }
 
     public String bookTitle() {return "'Z mgły zrodzony'";}
 

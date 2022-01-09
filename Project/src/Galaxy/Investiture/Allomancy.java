@@ -5,9 +5,11 @@ import Galaxy.Log;
 
 public class Allomancy extends Investiture implements MagicInterface {
 
+    public String name() {return "Allomancja";}
+
     public void info() {
         String[] info = {
-                "Allomancja – jeden z trzech typów Napełnienia na Scadrialu",
+                "Jeden z trzech typów Napełnienia na Scadrialu",
                 "lokalny znana jako jedna z trzech Sztuk Metalicznych."
         };
 
@@ -15,7 +17,5 @@ public class Allomancy extends Investiture implements MagicInterface {
             Log.info(line);
         }
     }
-
-    public String name() {return "Allomancja";}
 
 }

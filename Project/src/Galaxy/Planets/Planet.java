@@ -15,7 +15,7 @@ public abstract class Planet implements PlanetInterface {
 
     public String shard() {return getShard(); };
 
-    public ArrayList magic() {return magicSystems();}
+    public ArrayList<Investiture> magic() {return magicSystems();}
 
     public String book() {return bookTitle();}
 

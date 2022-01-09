@@ -8,7 +8,7 @@ public abstract class Investiture implements MagicInterface {
 
     public abstract String name();
 
-    /*public abstract void info();*/
+    public abstract void info();
 
     public static ArrayList<Investiture> makeMagic() {
         ArrayList<Investiture> magic = new ArrayList<>();
@@ -21,6 +21,7 @@ public abstract class Investiture implements MagicInterface {
         magic.add(new ChayShan());
         magic.add(new DiseaseMagic());
         magic.add(new Feruchemy());
+        magic.add(new Forgery());
         magic.add(new Hemalurgy());
         magic.add(new OldMagic());
         magic.add(new SandMastery());
