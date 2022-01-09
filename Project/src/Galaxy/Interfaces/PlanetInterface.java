@@ -1,10 +1,12 @@
 package Galaxy.Interfaces;
 
+import Galaxy.Shards.Shard;
+
 import java.util.ArrayList;
 
 public interface PlanetInterface {
 
     String name();
-    String shard();
+    ArrayList<Shard> shard();
     String book();
 }

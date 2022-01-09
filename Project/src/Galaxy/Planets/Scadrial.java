@@ -16,13 +16,13 @@ public class Scadrial extends Planet implements PlanetInterface {
 
     public String name() {return getClass().getSimpleName();}
 
-    public String getShard() {
+    public ArrayList<Shard> getShard() {
         ArrayList<Shard> shards = new ArrayList<>();
 
         shards.add(new Preservation());
         shards.add(new Ruin());
 
-        return shards.toString();
+        return shards;
     }
 
     public String bookTitle() {return "'Z mgły zrodzony'";}

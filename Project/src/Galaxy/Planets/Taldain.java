@@ -12,12 +12,12 @@ public class Taldain extends Planet implements PlanetInterface {
 
     public String name() {return getClass().getSimpleName();}
 
-    public String getShard() {
+    public ArrayList<Shard> getShard() {
         ArrayList<Shard> shards = new ArrayList<>();
 
         shards.add(new Autonomy());
 
-        return shards.toString();
+        return shards;
     }
 
     public String bookTitle() {return "'Biały piasek'";}

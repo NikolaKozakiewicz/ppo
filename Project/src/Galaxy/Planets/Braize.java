@@ -12,12 +12,12 @@ public class Braize extends Planet implements PlanetInterface {
 
     public String name() {return getClass().getSimpleName();}
 
-    public String getShard() {
+    public ArrayList<Shard> getShard() {
         ArrayList<Shard> shards = new ArrayList<>();
 
         shards.add(new Odium());
 
-        return shards.toString();
+        return shards;
     }
 
     public String bookTitle() {return "'Archiwum Burzowego Światła'";}

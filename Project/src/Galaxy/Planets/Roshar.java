@@ -17,13 +17,13 @@ public class Roshar extends Planet implements PlanetInterface {
 
     public String name() {return getClass().getSimpleName();}
 
-    public String getShard() {
+    public ArrayList<Shard> getShard() {
         ArrayList<Shard> shards = new ArrayList<>();
 
         shards.add(new Honor());
         shards.add(new Cultivation());
 
-        return shards.toString();
+        return shards;
     }
 
     public String bookTitle() {return "'Archiwum Burzowego Światła'";}
