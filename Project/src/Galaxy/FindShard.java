@@ -48,96 +48,55 @@ public class FindShard {
     }
 
     private void Ambicja() throws Exception {
-        Log.info(showShards().get(0).name());
-        Log.info("Naczynie: " + showShards().get(0).getVessel());
-        if (showShards().get(0).isAlive()) {
-            Log.info("Status: żywy");
-        }
-        else Log.info("Status: strzaskany");
+        show(0);
     }
 
     private void Niezależność() throws Exception {
-        Log.info(showShards().get(1).name());
-        Log.info("Naczynie: " + showShards().get(1).getVessel());
-        if (showShards().get(1).isAlive()) {
-            Log.info("Status: żywy");
-        }
-        else Log.info("Status: strzaskany");
+        show(1);
     }
 
     private void Pielęgnacja() throws Exception {
-        Log.info(showShards().get(2).name());
-        Log.info("Naczynie: " + showShards().get(2).getVessel());
-        if (showShards().get(2).isAlive()) {
-            Log.info("Status: żywy");
-        }
-        else Log.info("Status: strzaskany");
+        show(2);
     }
 
     private void Oddanie() throws Exception {
-        Log.info(showShards().get(3).name());
-        Log.info("Naczynie: " + showShards().get(3).getVessel());
-        if (showShards().get(3).isAlive()) {
-            Log.info("Status: żywy");
-        }
-        else Log.info("Status: strzaskany");
+        show(3);
     }
 
     private void Dominacja() throws Exception {
-        Log.info(showShards().get(4).name());
-        Log.info("Naczynie: " + showShards().get(4).getVessel());
-        if (showShards().get(4).isAlive()) {
-            Log.info("Status: żywy");
-        }
-        else Log.info("Status: strzaskany");
+        show(4);
     }
 
     private void Obdarowanie() throws Exception {
-        Log.info(showShards().get(5).name());
-        Log.info("Naczynie: " + showShards().get(5).getVessel());
-        if (showShards().get(5).isAlive()) {
-            Log.info("Status: żywy");
-        }
-        else Log.info("Status: strzaskany");
+        show(5);
     }
 
     private void Honor() throws Exception {
-        Log.info(showShards().get(6).name());
-        Log.info("Naczynie: " + showShards().get(6).getVessel());
-        if (showShards().get(6).isAlive()) {
-            Log.info("Status: żywy");
-        }
-        else Log.info("Status: strzaskany");
+        show(6);
     }
 
     private void Odium() throws Exception {
-        Log.info(showShards().get(7).name());
-        Log.info("Naczynie: " + showShards().get(7).getVessel());
-        if (showShards().get(7).isAlive()) {
-            Log.info("Status: żywy");
-        }
-        else Log.info("Status: strzaskany");
+        show(7);
     }
 
     private void Zachowanie() throws Exception {
-        Log.info(showShards().get(8).name());
-        Log.info("Naczynie: " + showShards().get(8).getVessel());
-        if (showShards().get(8).isAlive()) {
-            Log.info("Status: żywy");
-        }
-        else Log.info("Status: strzaskany");
+        show(8);
     }
 
     private void Zniszczenie() throws Exception {
-        Log.info(showShards().get(9).name());
-        Log.info("Naczynie: " + showShards().get(9).getVessel());
-        if (showShards().get(9).isAlive()) {
-            Log.info("Status: żywy");
-        }
-        else Log.info("Status: strzaskany");
+        show(9);
     }
 
     private void powrót() throws Exception {
         throw new Exception("Koniec podróży.");
+    }
+
+    private void show(int a) {
+        Log.info(showShards().get(a).name());
+        Log.info("Naczynie: " + showShards().get(a).getVessel());
+        if (showShards().get(a).isAlive()) {
+            Log.info("Status: żywy");
+        }
+        else Log.info("Status: strzaskany");
     }
 }

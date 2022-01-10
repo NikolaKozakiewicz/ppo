@@ -11,16 +11,8 @@ import java.util.Scanner;
 
 public class ExploreMagic {
 
-    public ArrayList<Planet> showPlanets() {
-        return Planet.giveList();
-    }
-
     public ArrayList<Investiture> showInvestiture() {
         return Investiture.makeMagic();
-    }
-
-    public ArrayList<Shard> showShards() {
-        return Shard.showShards();
     }
 
     public void explore() {
@@ -49,81 +41,71 @@ public class ExploreMagic {
     }
 
     private void Allomancja() throws Exception {
-        Log.info(showInvestiture().get(0).name());
-        showInvestiture().get(0).info();
+        show(0);
     }
 
     private void AonDor() throws Exception {
-        Log.info(showInvestiture().get(1).name());
-        showInvestiture().get(1).info();
+        show(1);
     }
 
     private void Aviary() throws Exception {
-        Log.info(showInvestiture().get(2).name());
-        showInvestiture().get(2).info();
+        show(2);
     }
 
     private void Rozbudzanie() throws Exception {
-        Log.info(showInvestiture().get(3).name());
-        showInvestiture().get(3).info();
+        show(3);
     }
 
     private void Pieczęcie() throws Exception {
-        Log.info(showInvestiture().get(4).name());
-        showInvestiture().get(4).info();
+        show(4);
     }
 
     private void ChayShan() throws Exception {
-        Log.info(showInvestiture().get(5).name());
-        showInvestiture().get(5).info();
+        show(5);
     }
 
     private void MagiaChorób() throws Exception {
-        Log.info(showInvestiture().get(6).name());
-        showInvestiture().get(6).info();
+        show(6);
     }
 
     private void Feruchemia() throws Exception {
-        Log.info(showInvestiture().get(7).name());
-        showInvestiture().get(7).info();
+        show(7);
     }
 
     private void Fałszerstwo() throws Exception {
-        Log.info(showInvestiture().get(8).name());
-        showInvestiture().get(8).info();
+        show(8);
     }
 
     private void Hemalurgia() throws Exception {
-        Log.info(showInvestiture().get(9).name());
-        showInvestiture().get(9).info();
+        show(9);
     }
 
     private void StaraMagia() throws Exception {
-        Log.info(showInvestiture().get(10).name());
-        showInvestiture().get(10).info();
+        show(10);
     }
 
     private void Mistrzostwopiasku() throws Exception {
-        Log.info(showInvestiture().get(11).name());
-        showInvestiture().get(11).info();
+        show(11);
     }
 
     private void Cienie() throws Exception {
-        Log.info(showInvestiture().get(12).name());
-        showInvestiture().get(12).info();
+        show(12);
     }
 
     private void WiązanieMocy() throws Exception {
-        Log.info(showInvestiture().get(13).name());
-        showInvestiture().get(13).info();
+        show(13);
     }
 
     private void WiązaniePustki() throws Exception {
-        Log.info(showInvestiture().get(14).name());
-        showInvestiture().get(14).info();
+        show(14);
     }
 
     private void powrót() throws Exception {
         throw new Exception("Koniec podróży.");
+    }
+
+    private void show(int a) {
+        Log.info(showInvestiture().get(a).name());
+        showInvestiture().get(a).info();
     }
 }

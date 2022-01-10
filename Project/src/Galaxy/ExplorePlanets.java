@@ -49,120 +49,55 @@ public class ExplorePlanets {
     }
 
     private void Ashyn() throws Exception {
-        Log.info(showPlanets().get(0).name());
-        Log.info("[Odprysk]: brak");
-        Log.info("[Systemy magiczne]:");
-        for (int i=0; i<showPlanets().get(0).magic().size(); i++) {
-            Log.info(showPlanets().get(0).magic().get(i).name());
-        }
-        Log.info("[Pojawienia]: " + showPlanets().get(0).book());
+        show(0);
     }
 
     private void Braize() throws Exception {
-        Log.info(showPlanets().get(1).name());
-        Log.info("[Odprysk]:");
-        for (int i=0; i<showPlanets().get(1).shard().size(); i++) {
-            Log.info(showPlanets().get(1).shard().get(i).name());
-        }
-        Log.info("[Systemy magiczne]:");
-        for (int i=0; i<showPlanets().get(1).magic().size(); i++) {
-            Log.info(showPlanets().get(1).magic().get(i).name());
-        }
-        Log.info("[Pojawienia]: " + showPlanets().get(1).book());
+        show(1);
     }
 
     private void FirstoftheSun() throws Exception {
-        Log.info(showPlanets().get(2).name());
-        Log.info("[Odprysk]:");
-        for (int i=0; i<showPlanets().get(2).shard().size(); i++) {
-            Log.info(showPlanets().get(2).shard().get(i).name());
-        }
-        Log.info("[Systemy magiczne]:");
-        for (int i=0; i<showPlanets().get(2).magic().size(); i++) {
-            Log.info(showPlanets().get(2).magic().get(i).name());
-        }
-        Log.info("[Pojawienia]: " + showPlanets().get(2).book());
+        show(2);
     }
 
     private void Nalthis() throws Exception {
-        Log.info(showPlanets().get(3).name());
-        Log.info("[Odprysk]:");
-        for (int i=0; i<showPlanets().get(3).shard().size(); i++) {
-            Log.info(showPlanets().get(3).shard().get(i).name());
-        }
-        Log.info("[Systemy magiczne]:");
-        for (int i=0; i<showPlanets().get(3).magic().size(); i++) {
-            Log.info(showPlanets().get(3).magic().get(i).name());
-        }
-        Log.info("[Pojawienia]: " + showPlanets().get(3).book());
+        show(3);
     }
 
     private void Roshar() throws Exception {
-        Log.info(showPlanets().get(4).name());
-        Log.info("[Odprysk]:");
-        for (int i=0; i<showPlanets().get(4).shard().size(); i++) {
-            Log.info(showPlanets().get(4).shard().get(i).name());
-        }
-        Log.info("[Systemy magiczne]:");
-        for (int i=0; i<showPlanets().get(4).magic().size(); i++) {
-            Log.info(showPlanets().get(4).magic().get(i).name());
-        }
-        Log.info("[Pojawienia]: " + showPlanets().get(4).book());
+        show(4);
     }
 
     private void Scadrial() throws Exception {
-        Log.info(showPlanets().get(5).name());
-        Log.info("[Odprysk]:");
-        for (int i=0; i<showPlanets().get(5).shard().size(); i++) {
-            Log.info(showPlanets().get(5).shard().get(i).name());
-        }
-        Log.info("[Systemy magiczne]:");
-        for (int i=0; i<showPlanets().get(5).magic().size(); i++) {
-            Log.info(showPlanets().get(5).magic().get(i).name());
-        }
-        Log.info("[Pojawienia]: " + showPlanets().get(5).book());
+        show(5);
     }
 
     private void Sel() throws Exception {
-        Log.info(showPlanets().get(6).name());
-        Log.info("[Odprysk]:");
-        for (int i=0; i<showPlanets().get(6).shard().size(); i++) {
-            Log.info(showPlanets().get(6).shard().get(i).name());
-        }
-        Log.info("[Systemy magiczne]:");
-        for (int i=0; i<showPlanets().get(6).magic().size(); i++) {
-            Log.info(showPlanets().get(6).magic().get(i).name());
-        }
-        Log.info("[Pojawienia]: " + showPlanets().get(6).book());
+        show(6);
     }
 
     private void Taldain() throws Exception {
-        Log.info(showPlanets().get(7).name());
-        Log.info("[Odprysk]:");
-        for (int i=0; i<showPlanets().get(7).shard().size(); i++) {
-            Log.info(showPlanets().get(7).shard().get(i).name());
-        }
-        Log.info("[Systemy magiczne]:");
-        for (int i=0; i<showPlanets().get(7).magic().size(); i++) {
-            Log.info(showPlanets().get(7).magic().get(i).name());
-        }
-        Log.info("[Pojawienia]: " + showPlanets().get(7).book());
+        show(7);
     }
 
     private void Threnody() throws Exception {
-        Log.info(showPlanets().get(8).name());
-        Log.info("[Odprysk]:");
-        for (int i=0; i<showPlanets().get(8).shard().size(); i++) {
-            Log.info(showPlanets().get(8).shard().get(i).name());
-        }
-        Log.info("[Systemy magiczne]:");
-        for (int i=0; i<showPlanets().get(8).magic().size(); i++) {
-            Log.info(showPlanets().get(8).magic().get(i).name());
-        }
-        Log.info("[Pojawienia]: " + showPlanets().get(8).book());
+        show(8);
     }
 
     private void powrót() throws Exception {
         throw new Exception("Koniec podróży.");
+    }
+
+    private void show(int a) {
+        Log.info(showPlanets().get(a).name());
+        Log.info("[Odprysk]:");
+        for (int i=0; i<showPlanets().get(a).shard().size(); i++) {
+            Log.info(showPlanets().get(a).shard().get(i).name());
+        }
+        Log.info("[Systemy magiczne]:");
+        for (int i=0; i<showPlanets().get(a).magic().size(); i++) {
+            Log.info(showPlanets().get(a).magic().get(i).name());
+        }
+        Log.info("[Pojawienia]: " + showPlanets().get(a).book());
     }
 }

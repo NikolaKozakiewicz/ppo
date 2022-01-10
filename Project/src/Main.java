@@ -36,7 +36,7 @@ public class Main {
                     break;
                 }
                 case "Odpryski": {
-                    Log.info("Wybierz pożądany odprysk:");
+                    Log.info("Wybierz pożądany Odprysk:");
                     for (int i=0; i<shards.size(); i++) {
                         Log.info(shards.get(i).name());
                     }
