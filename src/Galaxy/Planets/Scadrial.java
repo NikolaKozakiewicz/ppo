@@ -77,10 +77,20 @@ public class Scadrial extends Planet implements PlanetInterface {
         boolean trip = true;
         while (trip) {
             Log.info(Log.ANSI_CYAN + "Chcesz porobić coś jeszcze?");
-            Log.info("[1] Zobaczyć faunę i florę Rosharu");
-            Log.info("[2] Poznać magię fabriali");
-            Log.info("[3] Zobaczyć pojedynek Mocowiązców ");
+            Log.info("[1] Poczytać o technologii Scadrialu.");
+            Log.info("[2] Kilka słow o metalach.");
+            Log.info("[3] Mgliści, Ferryci i Podwójni");
             Log.info("[x] Nie trzeba");
+            Scanner skan = new Scanner(System.in);
+            switch (skan.nextLine()) {
+                case "x": {
+                    trip = false;
+                    break;
+                }
+                default: {
+                    break;
+                }
+            }
         }
     }
 }

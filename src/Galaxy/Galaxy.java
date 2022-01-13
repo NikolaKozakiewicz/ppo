@@ -1,6 +1,9 @@
 package Galaxy;
 
+import Galaxy.Investiture.Investiture;
 import Galaxy.MagicUsers.MagicUser;
+import Galaxy.Planets.Planet;
+import Galaxy.Shards.Shard;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -8,18 +11,34 @@ import java.util.Scanner;
 
 public final class Galaxy {
 
-    public void giveShards() {
-        FindShard findShard = new FindShard();
-        findShard.knowShard();
-    }
+    ArrayList<Planet> planets = Planet.giveList();
+    ArrayList<Investiture> investitures = Investiture.makeMagic();
+    ArrayList<Shard> shards = Shard.showShards();
 
     public void explorePlenets() {
         ExplorePlanets explorePlanets = new ExplorePlanets();
+        Log.info(Log.ANSI_GREEN + "Wybierz miejsce docelowe:" + Log.ANSI_RESET);
+        for (int i=0; i<planets.size(); i++) {
+            Log.info(Log.ANSI_BLUE + planets.get(i).name() + Log.ANSI_RESET);
+        }
         explorePlanets.explore();
+    }
+
+    public void giveShards() {
+        FindShard findShard = new FindShard();
+        Log.info(Log.ANSI_GREEN + "Wybierz pożądany Odprysk:" + Log.ANSI_RESET);
+        for (int i=0; i<shards.size(); i++) {
+            Log.info(Log.ANSI_BLUE + shards.get(i).name() + Log.ANSI_RESET);
+        }
+        findShard.knowShard();
     }
 
     public void exploreMagic() {
         ExploreMagic exploreMagic = new ExploreMagic();
+        Log.info(Log.ANSI_GREEN + "Wybierz magię (bez spacji):" + Log.ANSI_RESET);
+        for (int i=0; i<investitures.size(); i++) {
+            Log.info(Log.ANSI_BLUE + investitures.get(i).name() + Log.ANSI_RESET);
+        }
         exploreMagic.explore();
     }
 

@@ -75,10 +75,20 @@ public class Sel extends Planet implements PlanetInterface {
         boolean trip = true;
         while (trip) {
             Log.info(Log.ANSI_CYAN + "Chcesz porobić coś jeszcze?");
-            Log.info("[1] Zobaczyć faunę i florę Rosharu");
-            Log.info("[2] Poznać magię fabriali");
-            Log.info("[3] Zobaczyć pojedynek Mocowiązców ");
+            Log.info("[1] Poznać Aony");
+            Log.info("[2] Poczytać o geografii Sel.");
+            Log.info("[3] Czym są Elantryjczycy?");
             Log.info("[x] Nie trzeba");
+            Scanner skan = new Scanner(System.in);
+            switch (skan.nextLine()) {
+                case "x": {
+                    trip = false;
+                    break;
+                }
+                default: {
+                    break;
+                }
+            }
         }
     }
 }

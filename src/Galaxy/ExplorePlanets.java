@@ -25,7 +25,6 @@ public class ExplorePlanets {
 
     public void explore() {
         Scanner scanner = new Scanner(System.in);
-
         try {
             while (true) {
                 String planet = scanner.nextLine();
