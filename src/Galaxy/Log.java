@@ -1,5 +1,7 @@
 package Galaxy;
 
+import java.util.Scanner;
+
 public class Log {
 
     public static void info() {
@@ -23,5 +25,10 @@ public class Log {
     public static final String ANSI_PURPLE = "\u001B[35m";
     public static final String ANSI_CYAN = "\u001B[36m";
     public static final String ANSI_WHITE = "\u001B[37m";
+
+    public static void pause() {
+        Scanner skan = new Scanner(System.in);
+        String enter = skan.nextLine();
+    }
 
 }

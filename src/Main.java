@@ -53,6 +53,8 @@ public class Main {
                 }
                 case "Pojedynki": {
                     Log.info(Log.ANSI_PURPLE + "Witamy na arenie magii!" + Log.ANSI_RESET);
+                    galaxy.startDuel();
+                    break;
                 }
                 case "Koniec": {
                     trip = false;

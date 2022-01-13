@@ -13,4 +13,6 @@ public class Power {
     public int getDamage() {
         return damage;
     }
+
+    public String getName() {return name;}
 }

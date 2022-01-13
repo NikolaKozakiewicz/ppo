@@ -6,7 +6,9 @@ public class Elantrian extends MagicUser {
 
     private String type = "Elantryjczyk";
 
-    public Elantrian(String type) {super(type);}
+    public Elantrian(String type) {
+        super(type);
+    }
 
     @Override
     public ArrayList<Power> getPowers() {
