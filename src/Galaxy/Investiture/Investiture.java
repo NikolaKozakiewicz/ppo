@@ -7,8 +7,9 @@ import java.util.ArrayList;
 public abstract class Investiture implements MagicInterface {
 
     public abstract String name();
+    abstract String info();
 
-    public abstract void info();
+    public String getInfo() {return info();}
 
     public static ArrayList<Investiture> makeMagic() {
         ArrayList<Investiture> magic = new ArrayList<>();

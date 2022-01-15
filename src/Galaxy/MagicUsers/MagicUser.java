@@ -20,7 +20,7 @@ public abstract class MagicUser {
     public void attack(MagicUser attacker, MagicUser opponent) {
         int move = rand.nextInt(attacker.getPowers().size());
         opponent.life_points = opponent.life_points - attacker.getPowers().get(move).getDamage();
-        Log.info(Log.ANSI_BLUE + attacker.type + " ("+ attacker.life_points + ") atakuje: " + opponent.type + " ("+ opponent.life_points + ") za pomocą: " + getPowers().get(move).getName() + Log.ANSI_RESET);
+        Log.info(Log.ANSI_BLUE + attacker.type + " ("+ attacker.life_points + ") atakuje: " + opponent.type + " za pomocą: " + getPowers().get(move).getName() + Log.ANSI_RESET);
         Log.info(Log.ANSI_BLUE + opponent.type + " ma teraz " + opponent.life_points + " zdrowia." + Log.ANSI_RESET);
         Log.info();
     }

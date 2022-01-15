@@ -2,7 +2,6 @@ package Galaxy;
 
 import Galaxy.Investiture.Investiture;
 import Galaxy.Planets.Planet;
-import Galaxy.Shards.Ambition;
 import Galaxy.Shards.Shard;
 
 import java.lang.reflect.InvocationTargetException;
@@ -92,11 +91,12 @@ public class FindShard {
     }
 
     private void show(int a) {
-        Log.info(Log.ANSI_GREEN + showShards().get(a).name() + Log.ANSI_RESET);
+        Log.info(Log.ANSI_YELLOW + showShards().get(a).name() + Log.ANSI_RESET);
         Log.info(Log.ANSI_GREEN + "Naczynie: " + Log.ANSI_RESET + Log.ANSI_BLUE + showShards().get(a).getVessel() + Log.ANSI_RESET);
         if (showShards().get(a).isAlive()) {
             Log.info(Log.ANSI_GREEN + "Status: "+ Log.ANSI_RESET + Log.ANSI_BLUE + "żywy" + Log.ANSI_RESET);
         }
         else Log.info(Log.ANSI_GREEN + "Status: "+ Log.ANSI_RESET + Log.ANSI_BLUE + "strzaskany" + Log.ANSI_RESET);
+        Log.info(Log.ANSI_GREEN + showShards().get(a).getInfo() + Log.ANSI_RESET);
     }
 }

@@ -5,17 +5,13 @@ import Galaxy.Log;
 
 public class AonDor extends Investiture implements MagicInterface {
 
-    public String name() {return "AonDor";}
+    public String name() {
+        return "AonDor";
+    }
 
-    public void info() {
-        String[] info = {
-                "Jeden z wielu różnych typów Napełnienia na Sel,",
-                "powiązany z odpryskiem Oddaniem i pisem runicznym zwanym Aonami."
-        };
-
-        for(String line : info) {
-            Log.info(line);
-        }
+    public String info() {
+        return "Jeden z wielu różnych typów Napełnienia na Sel," +
+                "\npowiązany z odpryskiem Oddaniem i pisem runicznym zwanym Aonami.";
     }
 
 }

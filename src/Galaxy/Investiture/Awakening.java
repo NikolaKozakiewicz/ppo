@@ -7,15 +7,10 @@ public class Awakening extends Investiture implements MagicInterface {
 
     public String name() {return "Rozbudzanie";}
 
-    public void info() {
-        String[] info = {
-                "Rodzaj Napełnienia z planety Nalthis",
-                "powiązany z Odpryskiem Obdarowaniem i manipulacją BioChromą."
-        };
+    public String info() {
+        return "Rodzaj Napełnienia z planety Nalthis," +
+                "\npowiązany z Odpryskiem Obdarowaniem i manipulacją BioChromą.";
 
-        for(String line : info) {
-            Log.info(line);
-        }
     }
 
 }

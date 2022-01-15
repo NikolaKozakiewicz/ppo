@@ -38,6 +38,7 @@ public class Main {
                 }
                 case "Pojedynki": {
                     Log.info(Log.ANSI_PURPLE + "Witamy na arenie magii!" + Log.ANSI_RESET);
+                    Log.pause();
                     galaxy.startDuel();
                     break;
                 }

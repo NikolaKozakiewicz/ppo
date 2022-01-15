@@ -105,7 +105,7 @@ public class ExploreMagic {
     }
 
     private void show(int a) {
-        Log.info(Log.ANSI_BLUE + showInvestiture().get(a).name() + Log.ANSI_RESET);
-        showInvestiture().get(a).info();
+        Log.info(Log.ANSI_YELLOW + showInvestiture().get(a).name() + Log.ANSI_RESET);
+        Log.info(Log.ANSI_GREEN + showInvestiture().get(a).getInfo() + Log.ANSI_RESET);
     }
 }

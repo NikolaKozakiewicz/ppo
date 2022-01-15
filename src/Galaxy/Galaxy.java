@@ -7,7 +7,6 @@ import Galaxy.Shards.Shard;
 
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Scanner;
 
 public final class Galaxy {
 
@@ -21,6 +20,7 @@ public final class Galaxy {
         for (int i=0; i<planets.size(); i++) {
             Log.info(Log.ANSI_BLUE + planets.get(i).name() + Log.ANSI_RESET);
         }
+        Log.info(Log.ANSI_BLUE + "(wpisz ''powrót'' jeśli chcesz wrócić)" + Log.ANSI_RESET);
         explorePlanets.explore();
     }
 
@@ -30,6 +30,7 @@ public final class Galaxy {
         for (int i=0; i<shards.size(); i++) {
             Log.info(Log.ANSI_BLUE + shards.get(i).name() + Log.ANSI_RESET);
         }
+        Log.info(Log.ANSI_BLUE + "(wpisz ''powrót'' jeśli chcesz wrócić)" + Log.ANSI_RESET);
         findShard.knowShard();
     }
 
@@ -39,6 +40,7 @@ public final class Galaxy {
         for (int i=0; i<investitures.size(); i++) {
             Log.info(Log.ANSI_BLUE + investitures.get(i).name() + Log.ANSI_RESET);
         }
+        Log.info(Log.ANSI_BLUE + "(wpisz ''powrót'' jeśli chcesz wrócić)" + Log.ANSI_RESET);
         exploreMagic.explore();
     }
 
@@ -46,6 +48,7 @@ public final class Galaxy {
         Duel duel = new Duel();
         ArrayList<MagicUser> participants;
         participants = duel.giveMagicUsers();
+        Log.pause();
 
         while (participants.size() > 1) {
             Random rand = new Random();

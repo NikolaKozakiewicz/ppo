@@ -107,7 +107,7 @@ public class ExplorePlanets {
 
     private void show(int a) {
         Log.info(showPlanets().get(a).name());
-        Log.info(Log.ANSI_GREEN + "Odprysk:" + Log.ANSI_RESET);
+        Log.info(Log.ANSI_YELLOW + "Odprysk:" + Log.ANSI_RESET);
         for (int i=0; i<showPlanets().get(a).shard().size(); i++) {
             Log.info(Log.ANSI_BLUE + showPlanets().get(a).shard().get(i).name() + Log.ANSI_RESET);
         }
